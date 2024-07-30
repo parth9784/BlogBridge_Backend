@@ -8,6 +8,7 @@ const { doComment } = require('../controllers/doComment');
 const { Authmid } = require('../middleware/Authmid');
 const { GetAll } = require('../controllers/GetAll');
 const { Blog_user } = require('../controllers/Blog_user');
+const {getbyid}= require('../controllers/getbyid');
 
 router.post('/signup', signup);
 router.post('/login', login);
@@ -15,6 +16,7 @@ router.post('/createblog',Authmid, Createblog);
 router.post('/dolike',Authmid, doLike);
 router.post('/docomment',Authmid, doComment);
 router.get("/getall",GetAll)
-router.get("/getuserblog",Authmid,Blog_user)
+router.post("/getuserblog",Authmid,Blog_user)
+router.post("/getbyid",Authmid,getbyid)
 
-module.exports = router; // Export the router instance
+module.exports = router;

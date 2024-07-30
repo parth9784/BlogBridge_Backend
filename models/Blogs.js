@@ -19,6 +19,8 @@ const scheme=new mongo.Schema({
         type:String,
         trim:true,
         required:true
+    },desc:{
+        type:String,
     },
     Like:[{
         type:mongo.Schema.Types.ObjectId,

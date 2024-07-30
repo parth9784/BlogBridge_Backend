@@ -7,7 +7,7 @@ function Authmid(req, res, next) {
 
     let token;
 
-    if (authHeader) {
+    if (authHeader && authHeader.startsWith("Bearer ")) {
         token = authHeader.split(' ')[1];
     } else if (tokenFromBody) {
         token = tokenFromBody;
@@ -17,6 +17,7 @@ function Authmid(req, res, next) {
         console.log('No token provided');
         return res.status(401).send('Unauthorized: No token provided');
     }
+
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.userid = decoded.id;

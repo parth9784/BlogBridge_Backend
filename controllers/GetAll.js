@@ -10,7 +10,6 @@ async function GetAll(req,res){
             })
         }
         res.status(200).json(data)
-
     }
     catch(error){
         console.error(error);
