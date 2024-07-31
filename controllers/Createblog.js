@@ -16,11 +16,10 @@ async function Createblog(req, res) {
                 msg: "Data toh pura bhejo yrr..."
             });
         }
-
-        console.log(image);
+        // console.log(image);
         let payload;
-        const desc = getFirstWords(content, 70) + "....";
-        console.log(image)
+        const desc = getFirstWords(content, 100) + "....";
+        // console.log(image)
         if (image) {
             payload = {
                 image, title, content, author: userid, desc
