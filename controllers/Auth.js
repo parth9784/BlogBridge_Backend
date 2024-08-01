@@ -12,21 +12,18 @@ async function signup(req, res) {
                 msg: "Data toh pura bhejo yrr.."
             });
         }
-        
         const already = await user.findOne({ email });
         if (already) {
             return res.status(400).json({
                 msg: "User already Registered.."
             });
         }
-        
         const hashed = await bcrypt.hash(password, 10);
         await user.create({
             email,
             password: hashed,
             username
         });
-        
         res.status(200).json({
             msg: "User Registered Successfully..."
         });
