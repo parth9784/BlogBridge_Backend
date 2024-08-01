@@ -16,6 +16,12 @@ const scheme=new mongo.Schema({
     username:{
         type:String,
         required:true
+    },
+    otp:{
+        type:String
+    },
+    otpExpires:{
+        type:Date
     }
 })
 module.exports=mongo.model("User",scheme);
