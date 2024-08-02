@@ -2,15 +2,15 @@ const user = require("../models/User");
 
 async function Getuserinfo(req, res) {
     try {
-        const { id } = req.query;
+        const { userid } = req; 
 
-        if (!id) {
+        if (!userid) {
             return res.status(400).json({
                 msg: "User ID is missing."
             });
         }
 
-        const User = await user.findById(id);
+        const User = await user.findById(userid);
         if (!User) {
             return res.status(404).json({
                 msg: "User not found."
@@ -19,7 +19,7 @@ async function Getuserinfo(req, res) {
 
         res.status(200).json({
             msg: "Successfully fetched user information.",
-            person: User.username
+            user_id: userid,
         });
     } catch (error) {
         console.error(error);
