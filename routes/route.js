@@ -13,6 +13,8 @@ const { Updateblog } = require('../controllers/updateblog');
 const { Forgotpassword } = require('../controllers/Forgotpassword');
 const { Verifyotp } = require('../controllers/Verifyotp');
 const { Passwordreset } = require('../controllers/Passwordreset');
+const { Getuserinfo } = require('../controllers/Getuserinfo');
+const { Fetchcomments } = require('../controllers/fetchcomments');
 
 
 router.post('/signup', signup);
@@ -27,6 +29,8 @@ router.put("/editblog",Authmid,Updateblog)
 router.post("/forgotpassword",Forgotpassword)
 router.post("/verifyotp",Verifyotp)
 router.put("/passwordreset",Passwordreset)
+router.get("/getuserinfo",Getuserinfo);
+router.get("/fetchcomments",Fetchcomments)
 
 
 module.exports = router;

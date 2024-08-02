@@ -17,6 +17,9 @@ const scheme=new mongo.Schema({
     blog_id:{
         type:mongo.Schema.Types.ObjectId,
         ref:"Blogs"
+    },username:{
+        type:String,
+        default:"Unknown"
     }
 })
 module.exports=mongo.model("Comments",scheme)
