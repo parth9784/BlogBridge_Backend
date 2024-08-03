@@ -58,11 +58,11 @@ async function login(req, res) {
                 id: data._id,
             };
             const token = jwt.sign(payload, process.env.JWT_SECRET, {
-                expiresIn: "3h"
+                expiresIn: "8h"
             });
             res.status(200).json({
                 msg: "Login Successful",
-                token
+                token,
             });
         } else {
             res.status(401).json({

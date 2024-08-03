@@ -20,6 +20,7 @@ async function Getuserinfo(req, res) {
         res.status(200).json({
             msg: "Successfully fetched user information.",
             user_id: userid,
+            username:User.username,
         });
     } catch (error) {
         console.error(error);
